@@ -1,6 +1,3 @@
-#### 2. `components/linak_tv_lift/__init__.py`
-
-```python
 import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.components import ble_client
