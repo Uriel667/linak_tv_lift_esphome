@@ -1,5 +1,4 @@
-#### File 2: `components/idasen_desk_controller/__init__.py`
-*Note: You must create the folder structure `components/idasen_desk_controller/` in your repo.*
+#### 2. `components/linak_tv_lift/__init__.py`
 
 ```python
 import esphome.codegen as cg
@@ -7,14 +6,14 @@ import esphome.config_validation as cv
 from esphome.components import ble_client
 from esphome.const import CONF_ID
 
-# Force dependencies to link correct libraries
+# Force dependencies
 DEPENDENCIES = ['ble_client', 'sensor']
 
-idasen_desk_controller_ns = cg.esphome_ns.namespace('idasen_desk_controller')
-IdasenDeskController = idasen_desk_controller_ns.class_('IdasenDeskController', cg.Component, ble_client.BLEClientNode)
+linak_tv_lift_ns = cg.esphome_ns.namespace('linak_tv_lift')
+LinakTvLift = linak_tv_lift_ns.class_('LinakTvLift', cg.Component, ble_client.BLEClientNode)
 
 CONFIG_SCHEMA = cv.Schema({
-    cv.GenerateID(): cv.declare_id(IdasenDeskController),
+    cv.GenerateID(): cv.declare_id(LinakTvLift),
     cv.Required('ble_client_id'): cv.use_id(ble_client.BLEClient),
 }).extend(cv.COMPONENT_SCHEMA)
 
