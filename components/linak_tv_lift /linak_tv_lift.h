@@ -7,13 +7,13 @@
 #include "esphome/components/sensor/sensor.h"
 
 namespace esphome {
-namespace idasen_desk_controller {
+namespace linak_tv_lift {
 
-// Linak 128-bit UUIDs
+// Standard Linak 128-bit UUIDs for TV Lifts and DPG controllers
 static const esp32_ble::ESPBTUUID CONTROL_SERVICE_UUID = esp32_ble::ESPBTUUID::from_raw("99FA0001-338A-1024-8A49-009C0215F78A");
 static const esp32_ble::ESPBTUUID CONTROL_CHARACTERISTIC_UUID = esp32_ble::ESPBTUUID::from_raw("99FA0002-338A-1024-8A49-009C0215F78A");
 
-class IdasenDeskController : public Component, public ble_client::BLEClientNode {
+class LinakTvLift : public Component, public ble_client::BLEClientNode {
  public:
   void setup() override;
   void loop() override;
@@ -32,18 +32,18 @@ class IdasenDeskController : public Component, public ble_client::BLEClientNode 
   uint16_t char_handle_{0};
 };
 
-class IdasenDeskControllerCover : public cover::Cover, public Component {
+class LinakTvLiftCover : public cover::Cover, public Component {
  public:
   void setup() override;
   void loop() override;
   void dump_config() override;
-  void set_idasen_desk_controller(IdasenDeskController *controller) { controller_ = controller; }
+  void set_linak_tv_lift(LinakTvLift *controller) { controller_ = controller; }
   cover::CoverTraits get_traits() override;
 
  protected:
   void control(const cover::CoverCall &call) override;
-  IdasenDeskController *controller_;
+  LinakTvLift *controller_;
 };
 
-}  // namespace idasen_desk_controller
+}  // namespace linak_tv_lift
 }  // namespace esphome
