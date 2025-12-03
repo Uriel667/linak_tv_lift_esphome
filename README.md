@@ -69,3 +69,10 @@ sensor:
     internal: true
   - platform: linak_tv_lift
     name: "TV Lift Height"
+
+### Step 2: Pairing
+Flash the ESP32.
+
+Put your Linak Lift into Pairing Mode (hold the Bluetooth button for 3-5 seconds until the blue light flashes).
+
+Power on the ESP32. It will connect automatically.
