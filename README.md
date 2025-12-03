@@ -16,7 +16,12 @@ This project is based on the excellent work of **[j5lien](https://github.com/j5l
 ## Installation
 
 ### Step 1: Create your YAML
-Create a new device in ESPHome and use the following configuration:
+Create a new device in ESPHome and use the below configuration:
+
+### Step 2: Pairing
+Flash the ESP32.
+Put your Linak Lift into Pairing Mode (hold the Bluetooth button for 3-5 seconds until the blue light flashes or plug out the bluetooth stick for 10 seconds and plug it back in).
+Power on the ESP32. It will connect automatically.
 
 ```yaml
 esphome:
@@ -70,9 +75,4 @@ sensor:
   - platform: linak_tv_lift
     name: "TV Lift Height"
 
-### Step 2: Pairing
-Flash the ESP32.
 
-Put your Linak Lift into Pairing Mode (hold the Bluetooth button for 3-5 seconds until the blue light flashes).
-
-Power on the ESP32. It will connect automatically.
